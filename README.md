@@ -11,8 +11,14 @@
 ## 📊 Project Results
 ## 📊 Project Preview
 
-![BigQuery Analytics Dashboard](images/bigquery-results.png)
-*Real-time IFRS 9 analytics running on Google Cloud BigQuery*
+## 🎯 Project Highlights
+```
+┌─────────────────────────────────────────────────────────┐
+│  ✅ 5,000 Loans Analyzed    ✅ $259.5M Portfolio       │
+│  ✅ IFRS 9 Compliant        ✅ Cloud-Native Architecture│
+│  ✅ Automated ECL           ✅ Production-Ready Code    │
+└─────────────────────────────────────────────────────────┘
+```
 
 ---
 ### Portfolio Overview
