@@ -166,7 +166,7 @@ SELECT
     COUNT(*) as loan_count,
     ROUND(SUM(outstanding_balance), 2) as total_exposure,
     ROUND(SUM(ecl_amount), 2) as total_ecl
-FROM `your-project-id.credit_risk_ifrs9.loan_portfolio`
+FROM `ifrs9-analytics.credit_risk_ifrs9.loan_portfolio`
 GROUP BY ifrs9_stage
 ORDER BY ifrs9_stage;
 ```
@@ -326,7 +326,7 @@ See `sql_queries.sql` for additional queries.
 
 ---
 
-## 🔮 Future Enhancements
+##  Future Enhancements
 
 **Phase 3: Automation**
 - Cloud Functions for automated processing
@@ -357,7 +357,7 @@ This project is for educational and portfolio purposes.
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - IFRS Foundation for standards guidance
 - Google Cloud Platform for infrastructure
