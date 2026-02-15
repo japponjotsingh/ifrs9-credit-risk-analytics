@@ -1,4 +1,4 @@
-# 🏦 IFRS 9 Automated Credit Risk Analytics
+# IFRS 9 Automated Credit Risk Analytics
 
 > End-to-end cloud-based credit risk reporting system implementing IFRS 9 Expected Credit Loss calculations on Google Cloud Platform
 
@@ -7,358 +7,302 @@
 [![IFRS 9](https://img.shields.io/badge/IFRS%209-Compliant-green.svg)](https://www.ifrs.org/)
 
 ---
----
 
-## 🎯 Project Highlights
-```
-┌──────────────────────────────────────────────────────────────┐
-│  ✅ 5,000 Loans Analyzed      ✅ $259.5M Portfolio          │
-│  ✅ IFRS 9 Compliant          ✅ Cloud-Native on GCP         │
-│  ✅ Automated ECL Calculation ✅ Production-Ready Code       │
-│  ✅ 2.1% Default Rate         ✅ 10+ SQL Analytics Queries   │
-└──────────────────────────────────────────────────────────────┘
-```
+## 📊 Project Overview
 
----
-## 📊 Project Results
-## 📊 Project Preview
+This project demonstrates a production-ready system for IFRS 9 Expected Credit Loss calculation and reporting. Built on Google Cloud Platform, it processes a portfolio of 5,000 loans with automated staging classification and comprehensive risk analytics.
 
-## 🎯 Project Highlights
+**Portfolio Snapshot:**
+- Total Loans: 5,000
+- Total Exposure: $259.5M
+- Total ECL: $6.7M (2.57% coverage)
+- Default Rate: 2.1% (103 loans in Stage 3)
 
 ---
-### Portfolio Overview
-- **Total Loans Analyzed:** 5,000
-- **Total Outstanding Balance:** $259,505,668.66
-- **Total ECL Amount:** $6,662,534.01
-- **Overall Coverage Ratio:** 2.57%
+
+## 🎯 Key Results
 
 ### IFRS 9 Staging Distribution
 
-| Stage | Description | Loan Count | % of Portfolio | Total Exposure | Total ECL | Coverage % |
-|-------|-------------|------------|----------------|----------------|-----------|------------|
-| **Stage 1** | Performing | 2,531 | 50.6% | $140.6M | $361K | 0.26% |
-| **Stage 2** | SICR Detected | 2,366 | 47.3% | $112.8M | $5.5M | 4.92% |
-| **Stage 3** | Default | 103 | 2.1% | $6.1M | $756K | 12.31% |
+| Stage | Description | Loan Count | % Portfolio | Total ECL | Coverage % |
+|-------|-------------|------------|-------------|-----------|------------|
+| Stage 1 | Performing | 2,531 | 50.6% | $361K | 0.26% |
+| Stage 2 | SICR Detected | 2,366 | 47.3% | $5.5M | 4.92% |
+| Stage 3 | Default | 103 | 2.1% | $756K | 12.31% |
 
-### Risk by Product Type
+### Product Risk Analysis
 
-| Product | ECL Rate | Risk Level | Key Characteristic |
-|---------|----------|------------|-------------------|
-| **Credit Card** | 14.26% | Highest | Unsecured exposure |
-| **SME Loan** | 8.73% | High | Business concentration |
-| **Personal Loan** | 8.55% | High | Unsecured consumer debt |
-| **Auto Loan** | 3.85% | Moderate | Secured by collateral |
-| **Mortgage** | 1.85% | Low | Strong collateral backing |
+| Product | ECL Rate | Risk Level |
+|---------|----------|------------|
+| Credit Card | 14.26% | Highest |
+| SME Loan | 8.73% | High |
+| Personal Loan | 8.55% | High |
+| Auto Loan | 3.85% | Moderate |
+| Mortgage | 1.85% | Low |
 
 ### Credit Quality Distribution
 
-| Credit Band | Score Range | Loan Count | % of Portfolio | Risk Assessment |
-|-------------|-------------|------------|----------------|-----------------|
-| **Fair (650-699)** | 650-699 | 1,158 | 23.2% | Largest segment - middle market |
-| **Good (700-749)** | 700-749 | 1,002 | 20.0% | Strong credit quality |
-| **Excellent (750+)** | 750+ | 1,034 | 20.7% | Premium borrowers |
-| **Poor (600-649)** | 600-649 | 950 | 19.0% | Requires monitoring |
-| **Very Poor (<600)** | <600 | 851 | 17.0% | High risk segment |
-
-### Key Risk Metrics
-
-**Top Risk Exposure:**
-- Loan ID: LN0002300
-- ECL Amount: $23,287.26
-- Requires immediate review and potential provisioning
-
-**Default Rate:** 2.1% (103 loans in Stage 3)
-**SICR Detection:** 47.3% of portfolio actively monitored in Stage 2
+| Credit Band | Score Range | Loan Count | % Portfolio |
+|-------------|-------------|------------|-------------|
+| Fair (650-699) | 650-699 | 1,158 | 23.2% |
+| Good (700-749) | 700-749 | 1,002 | 20.0% |
+| Excellent (750+) | 750+ | 1,034 | 20.7% |
+| Poor (600-649) | 600-649 | 950 | 19.0% |
+| Very Poor (<600) | <600 | 851 | 17.0% |
 
 ---
 
-## 🎯 Project Objective
+## 🏗️ Technical Implementation
 
-Build a production-ready automated system for IFRS 9 Expected Credit Loss (ECL) calculation and reporting, demonstrating:
-- Cloud data engineering capabilities
-- Credit risk analytics expertise
-- Regulatory compliance implementation
-- Automated reporting workflows
+### Phase 1: Data Foundation (Complete)
+
+**Data Infrastructure**
+- Generated synthetic loan portfolio (5,000 records)
+- Implemented BigQuery data warehouse on GCP
+- Automated risk parameter calculations (PD, LGD, EAD)
+- Built IFRS 9 staging classification logic
+- Developed 10+ analytical SQL queries
+
+### Phase 2: Python Analytics (Complete)
+
+**Advanced Analysis**
+- Connected Vertex AI Workbench to BigQuery
+- Performed correlation analysis and statistical modeling
+- Created 6 interactive Plotly visualizations
+- Generated automated CSV exports
+
+**Visualizations Created:**
+1. IFRS 9 staging distribution (pie + bar charts)
+2. Product risk analysis (ECL rates by product)
+3. Credit quality distribution (4-panel analysis)
+4. Correlation heatmap (risk parameter relationships)
+5. Vintage analysis (performance by origination year)
+6. Geographic distribution (risk by region)
+
+**Analysis Outputs:**
+- portfolio_summary.csv: Key metrics snapshot
+- high_risk_watchlist.csv: Stage 3 and high ECL loans
+- product_risk_analysis.csv: Detailed product metrics
+
+### Phase 3: Automation (Planned)
+
+- Cloud Functions for scheduled ECL calculations
+- Cloud Scheduler for daily/monthly execution
+- Automated alerting for threshold breaches
+- Looker Studio dashboards for executive reporting
 
 ---
 
-## ✨ Key Features
-
-### Phase 1 - Foundation ✅ (Completed)
-- ✅ **Realistic Data Generation:** 5,000 synthetic loans across 5 product types
-- ✅ **Risk Parameter Calculations:** PD, LGD, and EAD models
-- ✅ **IFRS 9 Staging Logic:** Automated Stage 1/2/3 classification
-- ✅ **ECL Computation:** Both 12-month and lifetime ECL
-- ✅ **BigQuery Integration:** Cloud data warehouse setup
-- ✅ **Analytics Queries:** 10+ professional SQL queries
-- ✅ **Documentation:** Comprehensive guides and READMEs
-
-### Phase 2 - Python Analytics ✅ (Completed)
-- ✅ **Vertex AI Workbench Integration:** Connected to BigQuery for analysis
-- ✅ **Advanced Python Analysis:** Pandas/NumPy data processing
-- ✅ **Interactive Visualizations:** 6 Plotly charts (staging, products, credit quality, etc.)
-- ✅ **Statistical Analysis:** Correlation analysis, vintage trends, geographic distribution
-- ✅ **Automated Exports:** CSV files with portfolio metrics and watchlists
-
-### Phase 3 - Automation 🚧 (Planned)
-- ⏳ Cloud Functions for automated processing
-- ⏳ Cloud Scheduler for daily/monthly runs
-- ⏳ Email notifications and alerts
-- ⏳ Interactive Looker Studio dashboards
----
-
-## 🏗️ Architecture
+## 💻 Architecture
 
 ```
-┌─────────────────┐    ┌──────────────┐    ┌─────────────────┐
-│  Data Generator │───▶│   BigQuery   │───▶│  Analytics SQL  │
-│    (Python)     │    │ (Cloud DWH)  │    │   (Queries)     │
-└─────────────────┘    └──────────────┘    └─────────────────┘
-                              │                       │
-                              ▼                       ▼
-                       ┌──────────────┐    ┌─────────────────┐
-                       │ Cloud Funcs  │    │  AI Insights    │
-                       │ (Automation) │    │ (Vertex AI)     │
-                       └──────────────┘    └─────────────────┘
-                              │                       │
-                              └───────────┬───────────┘
-                                          ▼
-                                  ┌──────────────┐
-                                  │   Reports    │
-                                  │ & Dashboards │
-                                  └──────────────┘
+Data Generation (Python) 
+    → BigQuery (Data Warehouse)
+    → SQL Analytics / Vertex AI Analysis
+    → Automated Reports & Dashboards
 ```
+
+**Technology Stack:**
+- **Cloud Platform:** Google Cloud Platform (BigQuery, Vertex AI, Cloud Functions)
+- **Languages:** Python 3.8+, SQL
+- **Libraries:** Pandas, NumPy, Plotly, google-cloud-bigquery
+- **Tools:** Jupyter Notebook, Git/GitHub
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Getting Started
 
 ### Prerequisites
-- Python 3.8+
+
+- Python 3.8 or higher
 - Google Cloud Platform account (free tier available)
 - Basic understanding of SQL and credit risk concepts
 
-### Step 1: Clone Repository
+### Installation
+
+**1. Clone Repository**
 ```bash
-git clone https://github.com/yourusername/ifrs9-automation.git
-cd ifrs9-automation
+git clone https://github.com/yourusername/ifrs9-credit-risk-analytics.git
+cd ifrs9-credit-risk-analytics
 ```
 
-### Step 2: Install Dependencies
+**2. Install Dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 3: Generate Sample Data
+**3. Generate Sample Data**
 ```bash
 python generate_sample_data.py
 ```
 
-This creates `loan_portfolio_data.csv` with 5,000 synthetic loans.
+**4. Configure GCP**
 
-### Step 4: Set Up Google Cloud Platform
+Create a GCP project and enable BigQuery API:
+- Navigate to console.cloud.google.com
+- Create new project
+- Enable BigQuery API
+- Create service account with BigQuery Admin role
+- Download JSON key file
 
-1. **Create GCP Project:**
-   - Go to https://console.cloud.google.com
-   - Create new project: "ifrs9-analytics"
-   - Enable BigQuery API
+Set authentication:
+```bash
+export GOOGLE_APPLICATION_CREDENTIALS="path/to/key.json"
+```
 
-2. **Create Service Account:**
-   - Navigate to IAM & Admin → Service Accounts
-   - Create account with "BigQuery Admin" role
-   - Download JSON key
+**5. Load Data to BigQuery**
+```bash
+# Edit setup_bigquery.py with your project ID
+python setup_bigquery.py
+```
 
-3. **Set Authentication:**
-   ```bash
-   export GOOGLE_APPLICATION_CREDENTIALS="path/to/key.json"
-   ```
+**6. Run Analytics**
 
-### Step 5: Load Data to BigQuery
+Access BigQuery Console and execute queries from `sql_queries.sql`:
 
-1. Edit `setup_bigquery.py` with your Project ID
-2. Run setup:
-   ```bash
-   python setup_bigquery.py
-   ```
-
-### Step 6: Run Analytics Queries
-
-Access BigQuery Console and run queries from `sql_queries.sql`:
-
-**Example - Portfolio Summary:**
 ```sql
 SELECT 
     ifrs9_stage,
     COUNT(*) as loan_count,
     ROUND(SUM(outstanding_balance), 2) as total_exposure,
-    ROUND(SUM(ecl_amount), 2) as total_ecl,
-    ROUND(SUM(ecl_amount)/SUM(outstanding_balance)*100, 2) as coverage_pct
-FROM `ifrs9-analytics.credit_risk_ifrs9.loan_portfolio`
+    ROUND(SUM(ecl_amount), 2) as total_ecl
+FROM `your-project-id.credit_risk_ifrs9.loan_portfolio`
 GROUP BY ifrs9_stage
 ORDER BY ifrs9_stage;
 ```
 
 ---
----
 
-## 📊 Python Analysis (Vertex AI)
+## 📈 Python Analysis
 
-### Running the Analysis
+### Running the Notebook
 
-The project includes a comprehensive Python notebook for advanced analytics:
+**File:** `vertex_ai/ifrs9_plotly_notebook.py`
 
-**File:** `ifrs9_plotly_notebook.py`
-
-**What it does:**
+**Functionality:**
 - Fetches loan data from BigQuery
-- Performs portfolio risk analysis
-- Creates 6 interactive Plotly visualizations:
-  - IFRS 9 staging distribution (pie + bar charts)
-  - Product risk analysis (ECL rates by product)
-  - Credit quality distribution (4-panel analysis)
-  - Correlation heatmap (risk metric relationships)
-  - Vintage analysis (performance by origination year)
-  - Geographic distribution (risk by region)
-- Exports analysis results to CSV
+- Performs statistical analysis
+- Creates interactive visualizations
+- Exports results to CSV
 
-**To run:**
-1. Upload notebook to Vertex AI Workbench or local Jupyter
-2. Update `PROJECT_ID` on line 33
+**Usage:**
+
+For Vertex AI Workbench:
+1. Upload notebook to your instance
+2. Update PROJECT_ID (line 33)
 3. Run all cells
-4. View interactive charts and export files
+4. View charts and exports
 
-**Requirements:**
-```python
-google-cloud-bigquery
-pandas
-plotly
+For local Jupyter:
+```bash
+pip install google-cloud-bigquery pandas plotly
+jupyter notebook
 ```
 
-**Outputs:**
-- `portfolio_summary.csv` - Overall portfolio metrics
-- `high_risk_watchlist.csv` - Stage 3 and high ECL loans
-- `product_risk_analysis.csv` - Risk metrics by product type
+**Requirements:**
+```
+google-cloud-bigquery>=3.11.0
+pandas>=2.0.0
+plotly>=5.0.0
+```
 
----
 ---
 
 ## 📂 Project Structure
+
 ```
-ifrs9-automation/
-├── README.md                           # Main project documentation
-├── QUICKSTART.md                       # 5-minute setup guide
-├── DATA_SUMMARY.md                     # Dataset documentation
-├── requirements.txt                    # Python dependencies
-├── generate_sample_data.py             # Synthetic data generator
-├── setup_bigquery.py                   # GCP/BigQuery setup
-├── sql_queries.sql                     # Analytical queries (10+)
-├── loan_portfolio_data.csv             # Generated dataset
-├── IFRS9_Portfolio_Analysis.pptx       # Presentation
-└── vertex_ai/                          # Python analysis ✅ NEW!
-    ├── ifrs9_plotly_notebook.py        # Plotly analysis notebook
-    ├── portfolio_summary.csv           # Portfolio metrics
-    ├── high_risk_watchlist.csv         # High-risk loans
-    └── product_risk_analysis.csv       # Product risk breakdown
+ifrs9-credit-risk-analytics/
+├── README.md
+├── QUICKSTART.md
+├── DATA_SUMMARY.md
+├── requirements.txt
+├── generate_sample_data.py
+├── setup_bigquery.py
+├── sql_queries.sql
+├── loan_portfolio_data.csv
+├── IFRS9_Portfolio_Analysis.pptx
+└── vertex_ai/
+    ├── ifrs9_plotly_notebook.py
+    ├── portfolio_summary.csv
+    ├── high_risk_watchlist.csv
+    └── product_risk_analysis.csv
 ```
 
 ---
 
----
+## 📊 Key Findings
 
-## 💼 Business Impact & Use Cases
-
-### Regulatory Compliance
-- **IFRS 9 Standards:** Automated ECL calculation meeting accounting requirements
-- **Audit Trail:** Complete data lineage and calculation transparency
-- **Reporting:** Ready-to-use templates for regulatory submissions
-
-### Risk Management
-- **Proactive Monitoring:** Early detection of credit deterioration (Stage 2)
-- **Portfolio Analytics:** Comprehensive risk metrics and KPIs
-- **Concentration Risk:** Geographic and sector analysis
-
-### Operational Efficiency
-- **Automation:** Reduces manual calculation time from days to minutes
-- **Scalability:** Cloud-native architecture handles portfolio growth
-- **Real-time:** Up-to-date risk metrics for decision-making
-
----
-
-## 📈 Sample Analytics & Insights
-
-### Portfolio Health Indicators
-- ✅ **Low Default Rate:** 2.1% in Stage 3 indicates effective credit management
-- ✅ **Proactive Monitoring:** 47.3% in Stage 2 shows early risk detection
-- ✅ **Diversified Portfolio:** Spread across 5 product types and 5 regions
+### Portfolio Health
+- Low default rate (2.1%) indicates effective credit management
+- Proactive monitoring of 47.3% in Stage 2 enables early intervention
+- Diversified across 5 product types and 5 regions
 
 ### Risk Concentrations
-- ⚠️ **High-Risk Products:** Credit Cards (14.26% ECL) need targeted mitigation
-- ⚠️ **Credit Quality:** 17% in Very Poor segment drives 51% of total ECL
-- ⚠️ **Top Exposures:** LN0002300 requires immediate attention
+- Credit Cards show highest ECL (14.26%) due to unsecured exposure
+- Very Poor credit segment (17% of loans) drives 51% of total ECL
+- Top exposure (LN0002300): $23,287 ECL
 
-### Strategic Opportunities
-- 💡 **Middle Market:** Fair credit segment (23.2%) represents growth opportunity
-- 💡 **Premium Segment:** 20.7% excellent credit offers expansion potential
-- 💡 **Product Mix:** Mortgage portfolio provides stability with low ECL (1.85%)
-
----
-
-## 🛠️ Tech Stack
-
-**Languages & Libraries:**
-- Python 3.8+ (Pandas, NumPy, Google Cloud BigQuery)
-- SQL (BigQuery Standard SQL)
-
-**Cloud Platform:**
-- Google Cloud Platform
-- BigQuery (Data Warehouse)
-- Cloud Functions (Serverless Computing)
-- Vertex AI (Machine Learning)
-- Cloud Scheduler (Orchestration)
-- Looker Studio (Visualization)
-
-**Development Tools:**
-- Jupyter Notebook
-- Git/GitHub
-- VS Code
+### Strategic Insights
+- Fair credit segment (23.2%) represents middle-market opportunity
+- Strong correlation between days past due and PD increases
+- Newer vintages (2023-2024) show better performance
 
 ---
 
-## 📚 Skills Demonstrated
+## 💼 Business Applications
 
-### Technical Skills
-✅ Cloud Data Engineering (GCP/BigQuery)  
-✅ ETL Pipeline Development  
-✅ SQL Analytics (Complex queries, window functions, CTEs)  
-✅ Python Data Processing (Pandas, NumPy)  
-✅ API Integration (Google Cloud SDK)  
-✅ Data Modeling & Architecture  
-✅ Automation & Orchestration  
+**Regulatory Compliance**
+- Automated IFRS 9 ECL calculations
+- Complete audit trail and data lineage
+- Regulatory reporting templates
 
-### Domain Expertise
-✅ IFRS 9 Accounting Standards  
-✅ Credit Risk Analytics  
-✅ Expected Credit Loss Modeling  
-✅ Risk Parameter Estimation (PD, LGD, EAD)  
-✅ SICR Detection Logic  
-✅ Financial Reporting & Compliance  
-✅ Portfolio Management  
+**Risk Management**
+- Early warning through Stage 2 classification
+- Portfolio and product-level risk metrics
+- Concentration analysis (geographic, sector)
+
+**Operational Efficiency**
+- Reduces calculation time from days to minutes
+- Scalable cloud architecture
+- Real-time risk metrics
 
 ---
 
-## 📊 Key SQL Queries
+## 🛠️ Skills Demonstrated
 
-### 1. Portfolio Overview
+**Technical Skills:**
+- Cloud Data Engineering (GCP/BigQuery)
+- ETL Pipeline Development
+- SQL Analytics (complex queries, CTEs, window functions)
+- Python Data Processing (Pandas, NumPy)
+- Data Visualization (Plotly)
+- API Integration (Google Cloud SDK)
+- Version Control (Git/GitHub)
+
+**Domain Knowledge:**
+- IFRS 9 Accounting Standards
+- Credit Risk Analytics
+- Expected Credit Loss Modeling
+- Risk Parameter Estimation (PD, LGD, EAD)
+- SICR Detection
+- Financial Reporting & Compliance
+- Portfolio Management
+
+---
+
+## 📝 Sample Queries
+
+**Portfolio Overview**
 ```sql
 SELECT 
     COUNT(*) as total_loans,
     SUM(outstanding_balance) as total_exposure,
     SUM(ecl_amount) as total_ecl,
-    SUM(ecl_amount) / SUM(outstanding_balance) * 100 as coverage_ratio
+    SUM(ecl_amount)/SUM(outstanding_balance)*100 as coverage_ratio
 FROM loan_portfolio;
 ```
 
-### 2. High-Risk Loans (Watchlist)
+**High-Risk Watchlist**
 ```sql
 SELECT loan_id, product_type, outstanding_balance, ecl_amount
 FROM loan_portfolio
@@ -367,116 +311,58 @@ ORDER BY ecl_amount DESC
 LIMIT 20;
 ```
 
-### 3. Product Risk Analysis
+**Product Risk Analysis**
 ```sql
 SELECT 
     product_type,
     COUNT(*) as loans,
-    SUM(ecl_amount) / SUM(outstanding_balance) * 100 as ecl_rate
+    SUM(ecl_amount)/SUM(outstanding_balance)*100 as ecl_rate
 FROM loan_portfolio
 GROUP BY product_type
 ORDER BY ecl_rate DESC;
 ```
 
-See `sql_queries.sql` for 10+ additional analytics queries.
+See `sql_queries.sql` for additional queries.
 
 ---
 
-## 🎓 Learning Outcomes
+## 🔮 Future Enhancements
 
-After completing this project, you will understand:
-- ✅ IFRS 9 regulatory requirements and implementation
-- ✅ Cloud-based data warehouse architecture (BigQuery)
-- ✅ Automated data pipeline development
-- ✅ Credit risk modeling and analytics
-- ✅ Production-grade code organization
-- ✅ SQL optimization for large datasets
-- ✅ Data visualization and reporting
+**Phase 3: Automation**
+- Cloud Functions for automated processing
+- Cloud Scheduler for daily/monthly runs
+- Email alerts for threshold breaches
+- Looker Studio dashboards
 
----
-
-## 🔮 Roadmap
-
-- [x] **Phase 1:** Data foundation and analytics (COMPLETE)
-  - [x] Synthetic data generation
-  - [x] BigQuery setup
-  - [x] SQL analytics queries
-  - [x] Documentation
-  
-- [ ] **Phase 2:** Cloud automation and orchestration
-  - [ ] Cloud Functions for automated ECL calculation
-  - [ ] Cloud Scheduler for daily/monthly runs
-  - [ ] Error handling and monitoring
-  
-- [ ] **Phase 3:** AI-powered insights
-  - [ ] Vertex AI integration
-  - [ ] Automated narrative generation
-  - [ ] Anomaly detection
-  
-- [ ] **Phase 4:** Real-time dashboards
-  - [ ] Looker Studio dashboards
-  - [ ] Email notifications
-  - [ ] Executive summaries
-  
-- [ ] **Phase 5:** Advanced ML models
-  - [ ] Predictive PD/LGD models
-  - [ ] Early warning system
-  - [ ] Stress testing scenarios
-
----
-
-## 🎯 Portfolio Showcase
-
-This project is perfect for demonstrating:
-- **Data Engineering:** Cloud-native architecture, ETL pipelines
-- **Analytics:** SQL proficiency, data modeling
-- **Domain Knowledge:** Banking regulations, credit risk
-- **Automation:** Workflow design, scheduled jobs
-- **Communication:** Documentation, visualization, reporting
-
-**Ideal for roles in:**
-- Credit Risk Analytics
-- Data Engineering
-- Financial Services Technology
-- Risk Management
-- Data Science (Banking/Finance)
+**Phase 4: Advanced Analytics**
+- Predictive PD/LGD models (ML)
+- Early warning system
+- Stress testing scenarios
+- Portfolio optimization
 
 ---
 
 ## 📧 Contact
 
-**Your Name**  
-📧 Email: japponjot.singh@gmail.com
-💼 LinkedIn: https://www.linkedin.com/in/japponjot-singh/
-🌐 Github: https://github.com/japponjotsingh
-
+**Japponjot Singh**  
+Email: japponjot.singh@gmail.com  
+LinkedIn: https://www.linkedin.com/in/japponjot-singh/  
+GitHub: https://github.com/japponjotsingh
 
 ---
 
 ## 📄 License
 
-This project is for educational and portfolio purposes. Feel free to use and modify for learning.
+This project is for educational and portfolio purposes.
 
 ---
 
 ## 🙏 Acknowledgments
 
-- IFRS Foundation for accounting standards guidance
-- Google Cloud Platform for cloud infrastructure
-- Python and SQL communities for excellent tools and libraries
+- IFRS Foundation for standards guidance
+- Google Cloud Platform for infrastructure
+- Python and SQL open-source communities
 
 ---
-
-## ⭐ Show Your Support
-
-If you found this project helpful:
-- ⭐ **Star this repository**
-- 🔄 **Fork it** to create your own version
-- 💬 **Share feedback** via issues
-- 📢 **Share** with others learning credit risk analytics
-
----
-
-**Built with ❤️ to demonstrate modern credit risk analytics capabilities**
 
 *Last Updated: December 2024*
