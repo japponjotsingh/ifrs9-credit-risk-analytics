@@ -193,7 +193,7 @@ SELECT
     ROUND(SUM(outstanding_balance), 2) as total_exposure,
     ROUND(SUM(ecl_amount), 2) as total_ecl,
     ROUND(SUM(ecl_amount)/SUM(outstanding_balance)*100, 2) as coverage_pct
-FROM `your-project-id.credit_risk_ifrs9.loan_portfolio`
+FROM `ifrs9-analytics.credit_risk_ifrs9.loan_portfolio`
 GROUP BY ifrs9_stage
 ORDER BY ifrs9_stage;
 ```
