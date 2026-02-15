@@ -382,10 +382,10 @@ This project is perfect for demonstrating:
 ## 📧 Contact
 
 **Your Name**  
-📧 Email: your.email@example.com  
-💼 LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)  
-🌐 Portfolio: [yourportfolio.com](https://yourportfolio.com)  
-📊 Tableau: [public.tableau.com/yourprofile](https://public.tableau.com/yourprofile)
+📧 Email: japponjot.singh@gmail.com
+💼 LinkedIn: https://www.linkedin.com/in/japponjot-singh/
+🌐 Github: https://github.com/japponjotsingh
+
 
 ---
 
