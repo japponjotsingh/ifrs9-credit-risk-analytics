@@ -93,14 +93,18 @@ Build a production-ready automated system for IFRS 9 Expected Credit Loss (ECL) 
 - ✅ **Analytics Queries:** 10+ professional SQL queries
 - ✅ **Documentation:** Comprehensive guides and READMEs
 
-### Phase 2 - Automation 🚧 (Planned)
+### Phase 2 - Python Analytics ✅ (Completed)
+- ✅ **Vertex AI Workbench Integration:** Connected to BigQuery for analysis
+- ✅ **Advanced Python Analysis:** Pandas/NumPy data processing
+- ✅ **Interactive Visualizations:** 6 Plotly charts (staging, products, credit quality, etc.)
+- ✅ **Statistical Analysis:** Correlation analysis, vintage trends, geographic distribution
+- ✅ **Automated Exports:** CSV files with portfolio metrics and watchlists
+
+### Phase 3 - Automation 🚧 (Planned)
 - ⏳ Cloud Functions for automated processing
 - ⏳ Cloud Scheduler for daily/monthly runs
-- ⏳ Vertex AI integration for insights
-- ⏳ Automated report generation (PDF/PowerPoint)
 - ⏳ Email notifications and alerts
 - ⏳ Interactive Looker Studio dashboards
-
 ---
 
 ## 🏗️ Architecture
@@ -195,25 +199,69 @@ ORDER BY ifrs9_stage;
 ```
 
 ---
+---
+
+## 📊 Python Analysis (Vertex AI)
+
+### Running the Analysis
+
+The project includes a comprehensive Python notebook for advanced analytics:
+
+**File:** `ifrs9_plotly_notebook.py`
+
+**What it does:**
+- Fetches loan data from BigQuery
+- Performs portfolio risk analysis
+- Creates 6 interactive Plotly visualizations:
+  - IFRS 9 staging distribution (pie + bar charts)
+  - Product risk analysis (ECL rates by product)
+  - Credit quality distribution (4-panel analysis)
+  - Correlation heatmap (risk metric relationships)
+  - Vintage analysis (performance by origination year)
+  - Geographic distribution (risk by region)
+- Exports analysis results to CSV
+
+**To run:**
+1. Upload notebook to Vertex AI Workbench or local Jupyter
+2. Update `PROJECT_ID` on line 33
+3. Run all cells
+4. View interactive charts and export files
+
+**Requirements:**
+```python
+google-cloud-bigquery
+pandas
+plotly
+```
+
+**Outputs:**
+- `portfolio_summary.csv` - Overall portfolio metrics
+- `high_risk_watchlist.csv` - Stage 3 and high ECL loans
+- `product_risk_analysis.csv` - Risk metrics by product type
+
+---
+---
 
 ## 📂 Project Structure
-
 ```
 ifrs9-automation/
-├── README.md                      # This file
-├── QUICKSTART.md                  # 5-minute setup guide
-├── DATA_SUMMARY.md                # Detailed data documentation
-├── GITHUB_README.md               # GitHub project page
-├── requirements.txt               # Python dependencies
-├── generate_sample_data.py        # Synthetic data generator
-├── setup_bigquery.py              # GCP/BigQuery setup
-├── sql_queries.sql                # Analytical queries (10+)
-├── loan_portfolio_data.csv        # Generated dataset
-└── automation/                    # Phase 2 (coming soon)
-    ├── cloud_functions/
-    ├── workflows/
-    └── reports/
+├── README.md                           # Main project documentation
+├── QUICKSTART.md                       # 5-minute setup guide
+├── DATA_SUMMARY.md                     # Dataset documentation
+├── requirements.txt                    # Python dependencies
+├── generate_sample_data.py             # Synthetic data generator
+├── setup_bigquery.py                   # GCP/BigQuery setup
+├── sql_queries.sql                     # Analytical queries (10+)
+├── loan_portfolio_data.csv             # Generated dataset
+├── IFRS9_Portfolio_Analysis.pptx       # Presentation
+└── vertex_ai/                          # Python analysis ✅ NEW!
+    ├── ifrs9_plotly_notebook.py        # Plotly analysis notebook
+    ├── portfolio_summary.csv           # Portfolio metrics
+    ├── high_risk_watchlist.csv         # High-risk loans
+    └── product_risk_analysis.csv       # Product risk breakdown
 ```
+
+---
 
 ---
 
