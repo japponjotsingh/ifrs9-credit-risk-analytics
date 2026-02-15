@@ -9,7 +9,12 @@
 ---
 
 ## 📊 Project Results
+## 📊 Project Preview
 
+![BigQuery Analytics Dashboard](images/bigquery-results.png)
+*Real-time IFRS 9 analytics running on Google Cloud BigQuery*
+
+---
 ### Portfolio Overview
 - **Total Loans Analyzed:** 5,000
 - **Total Outstanding Balance:** $259,505,668.66
